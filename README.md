@@ -23,7 +23,7 @@ Config parameters :
 	- user : (string - optional) - (default: 'user') - Set the user credential.
 	- pass : (string - optional) - (default: 'pass') - Set the password credential.
 	- host : (string - optional) - (default: '127.0.0.1') - The host you want to connect with.
-	- port : (integer - optional) - (default: 9998) - Set the port on which perform the RPC command.
+	- port : (integer - optional) - (default: 7167) - Set the port on which perform the RPC command.
 
 Promise vs callback based
 
@@ -40,7 +40,7 @@ var config = {
     user: 'npccoin',
     pass: 'local321',
     host: '127.0.0.1',
-    port: 19998
+    port: 17167
 };
 ```
 
@@ -121,7 +121,7 @@ var client = new RPCclient({
     user: 'npccoin',
     pass: 'local321', 
     host: '127.0.0.1', 
-    port: 17167
+    port: 7167
 });
 
 var cb = function (err, data) {

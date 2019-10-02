@@ -3,7 +3,7 @@
 [![Build Status](https://img.shields.io/travis/npccoin/npccoind-rpc.svg?branch=master)](https://travis-ci.org/npccoin/npccoind-rpc)
 [![NPM Package](https://img.shields.io/npm/v/@npccoin/npccoind-rpc.svg)](https://www.npmjs.org/package/@npccoin/npccoind-rpc)
 
-> Dash Client Library to connect to Dash Core (npccoind) via RPC
+> NPCcoin Client Library to connect to NPCcoin Core (npccoind) via RPC
 
 ## Install
 
@@ -137,8 +137,8 @@ client.help('getinfo',cb);
 
 ## Contributing
 
-Feel free to dive in! [Open an issue](https://github.com/dashevo/dash-std-template/issues/new) or submit PRs.
+Feel free to dive in! [Open an issue](https://github.com/npccoin/npccoin-std-template/issues/new) or submit PRs.
 
 ## License
 
-[MIT](LICENSE) &copy; Dash Core Group, Inc.
+[MIT](LICENSE) &copy; NPCcoin Core Developers

@@ -1,12 +1,16 @@
 {
-  "name": "@dashevo/dashd-rpc",
-  "description": "Dash Client Library to connect to Dash Core (dashd) via RPC",
+  "name": "@npccoin/npccoind-rpc",
+  "description": "NPCcoin Client Library to connect to NPCcoin Core (npccoind) via RPC",
   "version": "1.3.2",
   "author": {
-    "name": "Stephen Pair",
-    "email": "stephen@bitpay.com"
+    "name": "NPCcoin Core",
+    "email": "npccoin@gmail.com"
   },
   "contributors": [
+    {
+      "name": "Estilodevida",
+      "email": "estilodevidanpc@gmail.com"
+    },
     {
       "name": "Jeff Garzik",
       "email": "jgarzik@bitpay.com"
@@ -29,12 +33,12 @@
     }
   ],
   "keywords": [
-    "dash",
+    "npccoin",
     "rpc"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/dashevo/dashd-rpc"
+    "url": "https://github.com/npccoin/npccoind-rpc"
   },
   "license": "MIT",
   "main": "lib/index.js",
@@ -56,7 +60,7 @@
     "sinon": "^7.1.1"
   },
   "bugs": {
-    "url": "https://github.com/dashevo/dashd-rpc/issues"
+    "url": "https://github.com/npccoin/npccoind-rpc/issues"
   },
-  "homepage": "https://github.com/dashevo/dashd-rpc"
+  "homepage": "https://github.com/npccoin/npccoind-rpc"
 }

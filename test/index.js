@@ -75,7 +75,7 @@ describe('RpcClient', function() {
     var client = new RpcClient({
       user: 'user',
       pass: 'pass',
-      port: 8332,
+      port: 7167,
     });
     client.protocol.should.equal(https);
 
@@ -87,7 +87,7 @@ describe('RpcClient', function() {
       user: 'user',
       pass: 'pass',
       host: 'localhost',
-      port: 8332,
+      port: 7167,
       protocol: 'http'
     });
     client.protocol.should.equal(http);
@@ -100,7 +100,7 @@ describe('RpcClient', function() {
       user: 'user',
       pass: 'pass',
       host: 'localhost',
-      port: 8332,
+      port: 7167,
       rejectUnauthorized: true,
       disableAgent: true
     });
@@ -131,7 +131,7 @@ describe('RpcClient', function() {
       user: 'user',
       pass: 'pass',
       host: 'localhost',
-      port: 8332,
+      port: 7167,
       rejectUnauthorized: true,
       disableAgent: false
     });
@@ -148,7 +148,7 @@ describe('RpcClient', function() {
     });
 
     async.eachSeries([true, 'true', 1, '1', 'True'], function(i, next) {
-      client.importAddress('n28S35tqEMbt6vNad7A5K3mZ7vdn8dZ86X', '', i, function(error, parsedBuf) {
+      client.importAddress('NVJqxtzaysARtRck61435JQ8VBeFCMWygi', '', i, function(error, parsedBuf) {
         should.not.exist(error);
         should.exist(parsedBuf);
         parsedBuf.params[2].should.equal(true);
@@ -167,7 +167,7 @@ describe('RpcClient', function() {
       user: 'user',
       pass: 'pass',
       host: 'localhost',
-      port: 8332,
+      port: 7167,
       rejectUnauthorized: true,
       disableAgent: false
     });
@@ -183,12 +183,12 @@ describe('RpcClient', function() {
       return req;
     });
 
-    var obj = {'n28S35tqEMbt6vNad7A5K3mZ7vdn8dZ86X': 1};
+    var obj = {'NVJqxtzaysARtRck61435JQ8VBeFCMWygi': 1};
     async.eachSeries([obj, JSON.stringify(obj)], function(i, next) {
       client.sendMany('account', i, function(error, parsedBuf) {
         should.not.exist(error);
         should.exist(parsedBuf);
-        parsedBuf.params[1].should.have.property('n28S35tqEMbt6vNad7A5K3mZ7vdn8dZ86X', 1);
+        parsedBuf.params[1].should.have.property('NVJqxtzaysARtRck61435JQ8VBeFCMWygi', 1);
         next();
       });
     }, function(err) {
@@ -204,7 +204,7 @@ describe('RpcClient', function() {
       user: 'user',
       pass: 'pass',
       host: 'localhost',
-      port: 8332,
+      port: 7167,
       rejectUnauthorized: true,
       disableAgent: false
     });
@@ -243,7 +243,7 @@ describe('RpcClient', function() {
       user: 'user',
       pass: 'pass',
       host: 'localhost',
-      port: 8332,
+      port: 7167,
       rejectUnauthorized: true,
       disableAgent: true
     });
@@ -258,10 +258,10 @@ describe('RpcClient', function() {
       return new FakeRequest();
     });
 
-    client.getBalance('n28S35tqEMbt6vNad7A5K3mZ7vdn8dZ86X', 6, function(error, parsedBuf) {
+    client.getBalance('NVJqxtzaysARtRck61435JQ8VBeFCMWygi', 6, function(error, parsedBuf) {
       requestStub.restore();
       should.exist(error);
-      error.message.should.equal('Dash JSON-RPC: Connection Rejected: 401 Unnauthorized');
+      error.message.should.equal('NPCcoin JSON-RPC: Connection Rejected: 401 Unnauthorized');
       done();
     });
 
@@ -273,7 +273,7 @@ describe('RpcClient', function() {
       user: 'user',
       pass: 'pass',
       host: 'localhost',
-      port: 8332,
+      port: 7167,
       rejectUnauthorized: true,
       disableAgent: true
     });
@@ -291,7 +291,7 @@ describe('RpcClient', function() {
     client.getDifficulty(function(error, parsedBuf) {
       requestStub.restore();
       should.exist(error);
-      error.message.should.equal('Dash JSON-RPC: Connection Rejected: 403 Forbidden');
+      error.message.should.equal('NPCcoin JSON-RPC: Connection Rejected: 403 Forbidden');
       done();
     });
 
@@ -303,7 +303,7 @@ describe('RpcClient', function() {
       user: 'user',
       pass: 'pass',
       host: 'localhost',
-      port: 8332,
+      port: 7167,
       rejectUnauthorized: true,
       disableAgent: true
     });
@@ -322,7 +322,7 @@ describe('RpcClient', function() {
     client.getDifficulty(function(error, parsedBuf) {
       requestStub.restore();
       should.exist(error);
-      error.message.should.equal('Dash JSON-RPC: Work queue depth exceeded');
+      error.message.should.equal('NPCcoin JSON-RPC: Work queue depth exceeded');
       done();
     });
 
@@ -334,7 +334,7 @@ describe('RpcClient', function() {
       user: 'user',
       pass: 'pass',
       host: 'localhost',
-      port: 8332,
+      port: 7167,
       rejectUnauthorized: true,
       disableAgent: true
     });
@@ -356,7 +356,7 @@ describe('RpcClient', function() {
     client.getDifficulty(function(error, parsedBuf) {
       requestStub.restore();
       should.exist(error);
-      error.message.should.equal('Dash JSON-RPC: Request Error: write EPIPE');
+      error.message.should.equal('NPCcoin JSON-RPC: Request Error: write EPIPE');
       done();
     });
 
@@ -368,7 +368,7 @@ describe('RpcClient', function() {
       user: 'user',
       pass: 'pass',
       host: 'localhost',
-      port: 8332,
+      port: 7167,
       rejectUnauthorized: true,
       disableAgent: true
     });
@@ -401,7 +401,7 @@ describe('RpcClient', function() {
       user: 'user',
       pass: 'pass',
       host: 'localhost',
-      port: 8332,
+      port: 7167,
       rejectUnauthorized: true,
       disableAgent: true
     });
@@ -419,7 +419,7 @@ describe('RpcClient', function() {
     client.getDifficulty(function(error, parsedBuf) {
       requestStub.restore();
       should.exist(error);
-      error.message.should.equal('Dash JSON-RPC: Request Error: connect ECONNREFUSED');
+      error.message.should.equal('NPCcoin JSON-RPC: Request Error: connect ECONNREFUSED');
       done();
     });
 
@@ -431,7 +431,7 @@ describe('RpcClient', function() {
       user: 'user',
       pass: 'pass',
       host: 'localhost',
-      port: 8332,
+      port: 7167,
       rejectUnauthorized: true,
       disableAgent: true
     });
@@ -450,7 +450,7 @@ describe('RpcClient', function() {
     client.getDifficulty(function(error, parsedBuf) {
       requestStub.restore();
       should.exist(error);
-      error.message.should.equal('Dash JSON-RPC: Error Parsing JSON: Unexpected token o in JSON at position 1');
+      error.message.should.equal('NPCcoin JSON-RPC: Error Parsing JSON: Unexpected token o in JSON at position 1');
       done();
     });
 
@@ -462,7 +462,7 @@ describe('RpcClient', function() {
       user: 'user',
       pass: 'pass',
       host: 'localhost',
-      port: 8332,
+      port: 7167,
       rejectUnauthorized: true,
       disableAgent: true
     });
@@ -481,7 +481,7 @@ describe('RpcClient', function() {
     client.getDifficulty(function(error, parsedBuf) {
       requestStub.restore();
       should.exist(error);
-      error.message.should.equal('Dash JSON-RPC: Error Parsing JSON: Unexpected end of JSON input');
+      error.message.should.equal('NPCcoin JSON-RPC: Error Parsing JSON: Unexpected end of JSON input');
       done();
     });
 
@@ -493,7 +493,7 @@ describe('RpcClient', function() {
       user: 'user',
       pass: 'pass',
       host: 'localhost',
-      port: 8332,
+      port: 7167,
       rejectUnauthorized: true,
       disableAgent: true
     });

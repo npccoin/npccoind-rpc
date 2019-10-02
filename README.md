@@ -1,16 +1,16 @@
-# dashd-rpc
+# npccoind-rpc
 
-[![Build Status](https://img.shields.io/travis/dashevo/dashd-rpc.svg?branch=master)](https://travis-ci.org/dashevo/dashd-rpc)
-[![NPM Package](https://img.shields.io/npm/v/@dashevo/dashd-rpc.svg)](https://www.npmjs.org/package/@dashevo/dashd-rpc)
+[![Build Status](https://img.shields.io/travis/npccoin/npccoind-rpc.svg?branch=master)](https://travis-ci.org/npccoin/npccoind-rpc)
+[![NPM Package](https://img.shields.io/npm/v/@npccoin/npccoind-rpc.svg)](https://www.npmjs.org/package/@npccoin/npccoind-rpc)
 
-> Dash Client Library to connect to Dash Core (dashd) via RPC
+> Dash Client Library to connect to Dash Core (npccoind) via RPC
 
 ## Install
 
-dashd-rpc runs on [node](http://nodejs.org/), and can be installed via [npm](https://npmjs.org/):
+npccoind-rpc runs on [node](http://nodejs.org/), and can be installed via [npm](https://npmjs.org/):
 
 ```bash
-npm install @dashevo/dashd-rpc
+npm install @npccoin/npccoind-rpc
 ```
 
 ## Usage
@@ -27,8 +27,8 @@ Config parameters :
 
 Promise vs callback based
 
-  - `require('@dashevo/dashd-rpc/promise')` to have promises returned
-  - `require('@dashevo/dashd-rpc')` to have callback functions returned
+  - `require('@npccoin/npccoind-rpc/promise')` to have promises returned
+  - `require('@npccoin/npccoind-rpc')` to have callback functions returned
 	
 ### Examples
 
@@ -37,7 +37,7 @@ Config:
 ```javascript
 var config = {
     protocol: 'http',
-    user: 'dash',
+    user: 'npccoin',
     pass: 'local321',
     host: '127.0.0.1',
     port: 19998
@@ -47,7 +47,7 @@ var config = {
 Promise based:
 
 ```javascript
-var RpcClient = require('@dashevo/dashd-rpc/promise');
+var RpcClient = require('@npccoin/npccoind-rpc/promise');
 var rpc = new RpcClient(config);
 
 rpc.getRawMemPool()
@@ -68,8 +68,8 @@ Callback based (legacy):
 
 ```javascript
 var run = function() {
-  var bitcore = require('@dashevo/dashcore-lib');
-  var RpcClient = require('@dashevo/dashd-rpc');
+  var bitcore = require('@npccoin/npccoincore-lib');
+  var RpcClient = require('@npccoin/npccoind-rpc');
   var rpc = new RpcClient(config);
 
   var txids = [];
@@ -115,13 +115,13 @@ var run = function() {
 You can dynamically access to the help of each method by doing
 
 ```
-const RpcClient = require('@dashevo/dashd-rpc');
+const RpcClient = require('@npccoin/npccoind-rpc');
 var client = new RPCclient({
     protocol:'http',
-    user: 'dash',
+    user: 'npccoin',
     pass: 'local321', 
     host: '127.0.0.1', 
-    port: 19998
+    port: 17167
 });
 
 var cb = function (err, data) {

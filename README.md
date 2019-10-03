@@ -68,7 +68,7 @@ Callback based (legacy):
 
 ```javascript
 var run = function() {
-  var bitcore = require('@npccoin/npccoincore-lib');
+  var bitcore = require('npccoincore-lib');
   var RpcClient = require('@npccoin/npccoind-rpc');
   var rpc = new RpcClient(config);
 
